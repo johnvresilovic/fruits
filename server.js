@@ -5,8 +5,8 @@ const port = 3000
 const mongoose = require('mongoose');
 
 const Fruit = require('./models/fruits.js')
-// Set up middleware
 
+// Set up middleware
 app.use((req, res, next) => {
     console.log('I run for all routes')
     next()
@@ -38,6 +38,7 @@ Fruit.find({}, (error, allFruits)=> {
 app.get('/fruits/new', (req,res) =>{
     res.render('New')
 })
+
 // Delete - Delete this one record
 
 // Update - Modifying a record
@@ -55,6 +56,7 @@ app.post('/fruits', (req,res) => {
     })
     
 })
+
 // Edit - Get the form with the record to update
 
 // Show route - Show me a particular record
