@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 const app = express()
 const port = 3000
 const Fruit = require("./models/fruits.js")
-const methodOverride = require('method-override')
+const methodOverride = require('method-override') //remember to install method-override
 
 // Set up middleware
 app.use((req, res, next) => {
@@ -58,7 +58,6 @@ app.put('/fruits/:id', (req, res)=>{
       req.body.readyToEat = false;
   }
   Fruit.findByIdAndUpdate(req.params.id, req.body, (err, updatedFruit)=>{
-     console.log(updatedFruit)
       res.redirect(`/fruits/${req.params.id}`);
   })
 })
